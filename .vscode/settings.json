@@ -1,0 +1,36 @@
+{
+    "todohighlight.include": [
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.php",
+        "**/*.css",
+        "**/*.scss"
+    ],
+    "todohighlight.exclude": [
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/.vscode/**",
+        "**/.github/**",
+        "**/_output/**",
+        "**/*.min.*",
+        "**/*.map",
+        "**/.next/**"
+    ],
+    "todohighlight.keywords": [
+        {
+            "text": "TODO:",
+            "color": "#DE751F",
+            "border": "none",
+            "backgroundColor": "transparent"
+            //other styling properties goes here ... 
+        }
+    ],
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "javascript.validate.enable": false,
+}
