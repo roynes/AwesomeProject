@@ -1,25 +1,27 @@
-import { View, TouchableNativeFeedback, Text, StyleSheet } from 'react-native';
+import { View, TouchableNativeFeedback, Text, StyleSheet, Platform, TouchableOpacity } from 'react-native';
 import React from 'react';
 
 export default CustomButton = ({onclick, style, bordercolor, bgcolor, text, disable}) => {
-    return (
-      <View style={ [style, { width: '100%' }] }>
-        <TouchableNativeFeedback 
-          background={ TouchableNativeFeedback.SelectableBackground() } 
-          onPress={ onclick }
-          disabled={ disable }
+  const InnerButton = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
+
+  return (
+    <View style={ [style, { width: '100%' }] }>
+      <InnerButton
+        background={ TouchableNativeFeedback.SelectableBackground() }
+        onclick={ onclick }
+        disabled={ disable }
+      >
+        <View 
+          style={ [
+            styles.textView,
+            { backgroundColor: bgcolor || 'white', borderColor: bordercolor || 'white' }
+          ] }
         >
-          <View 
-            style={ [
-              styles.textView,
-              { backgroundColor: bgcolor || 'white', borderColor: bordercolor || 'white' }
-            ] }
-          >
-            <Text style={ styles.text } disabled={ disable }>{ text }</Text>
-          </View>
-        </TouchableNativeFeedback>
-      </View>
-    );
+          <Text style={ styles.text } disabled={ disable }>{ text }</Text>
+        </View>
+      </InnerButton>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

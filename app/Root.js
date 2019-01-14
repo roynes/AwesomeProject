@@ -11,12 +11,10 @@ import { Provider } from 'react-redux';
 import { store, persistor } from './redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import AppContainer from './container';
+import { AppContainer } from './container';
 
 export default class Root extends Component {
   render() {
-    console.log('root',store.getState());
-
     return (
       <Provider store={store}>
         <PersistGate  persistor={persistor}>

@@ -1,3 +1,5 @@
 import AppContainer from "./Home";
 
-export default AppContainer;
+export {
+  AppContainer
+};
