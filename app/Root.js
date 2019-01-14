@@ -5,13 +5,13 @@
  * @format
  * @flow
  */
-import React, {Component} from 'react';
-import { Listener } from './module';
-import { Provider } from 'react-redux';
-import { store, persistor } from './redux';
 import { PersistGate } from 'redux-persist/integration/react';
-
+import { store, persistor } from './redux';
 import { AppContainer } from './container';
+import { Provider } from 'react-redux';
+import { Listener } from './module';
+
+import React, {Component} from 'react';
 
 export default class Root extends Component {
   render() {

@@ -8,7 +8,7 @@ export default CustomButton = ({onclick, style, bordercolor, bgcolor, text, disa
     <View style={ [style, { width: '100%' }] }>
       <InnerButton
         background={ TouchableNativeFeedback.SelectableBackground() }
-        onclick={ onclick }
+        onPress={ onclick }
         disabled={ disable }
       >
         <View 

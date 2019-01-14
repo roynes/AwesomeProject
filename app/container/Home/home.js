@@ -7,6 +7,12 @@ import { connect } from 'react-redux';
 import styles from './styles';
 
 class Home extends Component {
+  componentDidMount() {
+    this.setState({
+      email: this.props.loginForm.email || '',
+      password: this.props.loginForm.password || ''
+    });
+  }
 
   state = {
     email: '',
@@ -22,19 +28,24 @@ class Home extends Component {
           valuechange={ (text) => { 
             this.setState({email: text})         
           }}
+          defaultValue={ this.props.loginForm.email }
         ></InputLabel>
+
         <InputLabel
           label='Password'
           inputStyles={ [styles.inputLabel, { marginVertical: 20 }] }
           valuechange={ (text) => { 
             this.setState({password: text})
           }}
+          defaultValue={ this.props.loginForm.password }
         ></InputLabel>
+
         <CustomButton
           text='Persist'
           bgcolor='#aa8fdb'
           bordercolor='#aa8fdb'
           style={ { padding: 15 } }
+          
           onclick={ ()=> {
             const {dispatch} = this.props;
             const {loginFormActionCreators} = loginFormRedux;
