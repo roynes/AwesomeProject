@@ -41,7 +41,7 @@ class Home extends Component {
         ></InputLabel>
 
         <CustomButton
-          text='Persist'
+          text='Slideshow and Persist'
           bgcolor='#aa8fdb'
           bordercolor='#aa8fdb'
           style={ { padding: 15 } }
@@ -53,6 +53,19 @@ class Home extends Component {
 
             dispatch(saveEmail(this.state.email));
             dispatch(savePassword(this.state.password));
+
+            this.props.navigation.navigate('SlideShow');
+          }}
+        ></CustomButton>
+
+        <CustomButton
+          text='Details'
+          bgcolor='#aa8fdb'
+          bordercolor='#aa8fdb'
+          style={ { padding: 15 } }
+          
+          onclick={ () =>  {
+            this.props.navigation.navigate('Details');
           }}
         ></CustomButton>
       </View>
