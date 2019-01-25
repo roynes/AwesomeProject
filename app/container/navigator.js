@@ -1,22 +1,10 @@
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import HomeContainer from './Home';
-import Details from './Details';
 
 const AppNavigator = createStackNavigator({
-  Home: HomeContainer, Details
+  Home: HomeContainer
 },{
-  initialRouteName: 'Home',
-  /* The header config from HomeScreen is now here */
-  defaultNavigationOptions: {
-    headerStyle: {
-      backgroundColor: '#aa8fdb',
-    },
-    headerTintColor: '#fefefe',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    },
-
-  }
+  initialRouteName: 'Home'
 });
 
 export default AppNavigator;

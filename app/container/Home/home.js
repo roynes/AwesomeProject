@@ -7,17 +7,11 @@ import { connect } from 'react-redux';
 import styles from './styles';
 
 class Home extends Component {
-  static navigationOptions = {
-    title: "Deez Home",
-  }
-
   componentDidMount() {
     this.setState({
       email: this.props.loginForm.email || '',
       password: this.props.loginForm.password || ''
     });
-
-    console.log('component did mount', this.state.nav);
   }
 
   state = {
@@ -50,7 +44,7 @@ class Home extends Component {
           text='Persist'
           bgcolor='#aa8fdb'
           bordercolor='#aa8fdb'
-          style={ { padding: 15, marginBottom: 15 } }
+          style={ { padding: 15 } }
           
           onclick={ ()=> {
             const {dispatch} = this.props;
@@ -61,15 +55,6 @@ class Home extends Component {
             dispatch(savePassword(this.state.password));
           }}
         ></CustomButton>
-
-        <CustomButton
-          text='Details'
-          bgcolor='#aa8fdb'
-          bordercolor='#aa8fdb'
-          style={ { padding: 15 } }
-          onclick={ () => this.props.navigation.navigate('Details') }
-        ></CustomButton>
-
       </View>
     )
   }
